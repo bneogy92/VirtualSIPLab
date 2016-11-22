@@ -1,14 +1,67 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Experiment 1</title>
-</head>
-<form action = "http://localhost:5000/uploader" method = "POST" enctype = "multipart/form-data">
-	<input type="file" name="file[]" multiple="">
-  	<input type="submit" value="add">
-</form>
-<body>
+<html lang="en">
 
+
+<head>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Experiment 1</title>
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+ <link rel="stylesheet" href="style_index.css">
+</head>
+
+<body>
+	<div class="container">	
+ 		<div class="row">
+ 			<div class="col-md-12 text-center">
+  				<h1 class="title-super" > Virtual Image Processing Lab</h1>
+  			</div>
+  		</div>		
+  		<div class="row">	
+ 			<div class="col-md-6">
+ 				<img class="image_logo" src="Data_webpage/logo_csre.jpg" alt="CSRE logo"></img>
+ 			</div>
+ 			<div class="col-md-6">
+ 				<h3 class="title-super3 "> IIT Bombay </h3>
+ 			</div>	
+ 		</div>	
+
+ 		<div class="row">
+ 			<div class="col-md-12">
+ 				<hr>
+ 			</div>
+ 		</div>
+
+ 		<div class="row">
+    		<div class="col-md-12">
+       			<br><br><br> 
+    		</div> 
+  		</div>
+
+ 		<div class="row">
+ 			<div class="col-md-5">
+ 				<frameset>
+ 			   		<legend><h3> Logarithmic Stretch</h3></legend>
+ 			  		<p class="log_details"> Blah blah.....</p>
+ 			  	</frameset>	
+ 			</div>
+ 				
+ 			<div class="col-md-2">
+ 			</div>
+
+ 			<div class="col-md-5">
+ 			 <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
+ 			  <frameset >
+ 			  	<legend>
+ 			  		<h3>Choose an image and it's header file</h3>
+ 			  	</legend>
+ 			  	<input type="file" name="file[]" multiple>
+ 			  	<br>
+ 			  	<input type="submit" value="Add"/>
+ 			  </frameset>
+ 			 </form>
+ 			</div>
+ 		</div> 
 </body>
 </html>
