@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>VirtualSIPLab</name>
+	<name>VSIP</name>
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
-<<<<<<< HEAD
 		<buildCommand>
 			<name>org.python.pydev.PyDevBuilder</name>
 			<arguments>
@@ -14,9 +13,5 @@
 	</buildSpec>
 	<natures>
 		<nature>org.python.pydev.pythonNature</nature>
-=======
-	</buildSpec>
-	<natures>
->>>>>>> refs/remotes/origin/master
 	</natures>
 </projectDescription>
