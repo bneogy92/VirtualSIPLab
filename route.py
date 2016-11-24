@@ -4,12 +4,36 @@ import os
 from imProc.conEnh import Core
 import re
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/css')
 
-UPLOAD_FOLDER = '../Data'
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = 'C:\Users\Ankur\Documents\GitHub\VirtualSIPLab\user_data'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['STATIC_FOLDER'] = 'css'
+
+@app.route('/css/<cssname>')
+def send_css(cssname):
+    print "in send_css"
+    csspath=APP_ROOT+'\\css\\'
+    print csspath
+    return send_from_directory(csspath, cssname)
+
+@app.route('/js/<jsname>')
+def send_js(jsname):
+    print "in send_js"
+    jspath='\\js\\'+jsname
+    return send_from_directory(APP_ROOT, jspath)
+
+@app.route('/images/<imagename>')
+def send_image(imagename):
+    print "in send_images"
+    imagepath=APP_ROOT+"\\images"
+    print imagepath
+    print imagename
+    print imagepath+"\\"+imagename
+    return send_from_directory(imagepath, imagename)
 
 
 @app.route('/')
@@ -19,6 +43,7 @@ def index():
 
 @app.route('/uploader', methods=['GET','POST'])
 def uploader():
+    print APP_ROOT
     print "i am in upload if"
     if request.method == 'POST':
         files = request.files.getlist("file[]")
@@ -31,6 +56,7 @@ def uploader():
                     fname=file_handle.filename #check by javascript that one file is hdr and one file is valid satellite image                    
                 filename = secure_filename(file_handle.filename)
                 fpath=os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                print fpath
                 file_handle.save(fpath)
         print "name",fname
         print "path",fpath

@@ -7,8 +7,9 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Index Page</title>
- <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
- <link rel="stylesheet" type="text/css" href="../css/style_index.css">
+
+ <link rel="stylesheet" type="text/css" href="{{ url_for('send_css', cssname='bootstrap.css') }}")>
+ <link rel="stylesheet" type="text/css" href="{{ url_for('send_css', cssname='style_index.css') }}">
 </head>
 
 
@@ -21,7 +22,7 @@
   	</div>
   	<div class="row">
  		<div class="col-md-6">
- 			<img class="image_logo" src="../images/logo_csre.jpg" alt="CSRE logo"></img>
+ 			<img class="image_logo" src="{{ url_for('send_image', imagename='logo_csre.jpg') }}" alt="CSRE logo"></img>
  		</div>
  		<div class="col-md-6">
  			<h3 class="title-super3 "> IIT Bombay </h3>
@@ -41,7 +42,7 @@
 
   	<div class="row">
     	<div class="col-md-12 text-center">
-     		<img class="image-main" src="../images/index_image.jpg" alt="Image Processing">
+     		<img class="image-main" src="{{ url_for('send_image', imagename='index_image.jpg') }}" alt="Image Processing">
     	</div>
   	</div>
 
