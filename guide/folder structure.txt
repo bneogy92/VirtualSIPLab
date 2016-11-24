@@ -1,0 +1,21 @@
+VirtualSIP
+        |
+        |
+        |_ css
+        |_ js
+        |_ templates
+	|	  |_ experiments
+	|	  |_ other
+	|	  |_ result.html
+	|	  |_ uploader.html
+        |_ imProc
+	|      |_ display
+	|      |_ conEnh
+	|      |_ neighOps
+	|      |_ morph
+	|      |     |_ binary
+	|      |     |_ graysc
+	|      |_ fourierTransf
+	|      |_ classification
+        |_ user_data
+        |_ route.py

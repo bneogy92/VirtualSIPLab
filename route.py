@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, make_response, send_from_directory
 from werkzeug import secure_filename, datastructures
 import os
-import Core
+from imProc.conEnh import Core
 import re
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = 'C:\Users\Ankur\Documents\MATLAB\VSIP Lab\PyDevelop\Code\VirtualSIP\Data'
+UPLOAD_FOLDER = '../Data'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -58,5 +58,9 @@ def log(fname):
     newName=Core.Imagelog(path)
     return render_template('result.html',fname=newName)
 
+@app.route('/experiments')
+def experiments():
+    return render_template('experiments.html')
+
 if __name__ == '__main__':
-   app.run(debug = True)
+   app.run(host='127.0.0.1',port=8000,debug = True)
