@@ -70,7 +70,7 @@ def uploader():
 def display(fname):
     print "i am in display"
     fileExt=re.findall('[.]\S+', fname)[0]
-    fpath=UPLOAD_FOLDER+"\\"+fname
+    #fpath=UPLOAD_FOLDER+"\\"+fname
     newName=fname
     path=APP_ROOT+"\\user_data\\"
     print "path "+path

@@ -53,10 +53,10 @@ def numBands(path,isSat):
     return bands
 
 #function to convert file format
-#def imConvert(path,newExt):
-    #imExtInfo=imType(path)
+def imConvert(path,newExt):
+    imExtInfo=imType(path)
     
-    #satEtx=['.tiff','.img','.lan']
+    satEtx=['.tiff','.img','.lan']
     
    # if newExt in satEtx:
         

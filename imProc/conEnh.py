@@ -8,6 +8,7 @@ import math
 from osgeo import osr
 import os
 
+
 #function for log stretch
 def Imagelog(path):
     
