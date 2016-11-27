@@ -9,13 +9,14 @@ VirtualSIP
 	|	  |_ result.html
 	|	  |_ uploader.html
         |_ imProc
-	|      |_ display
-	|      |_ conEnh
-	|      |_ neighOps
-	|      |_ morph
-	|      |     |_ binary
-	|      |     |_ graysc
-	|      |_ fourierTransf
-	|      |_ classification
+	|      |_ display.py
+	|      |_ conEnh.py
+	|      |         |_log()	
+	|      |_ neighOps.py
+	|      |_ morph.py
+	|      |     |_ binary()
+	|      |     |_ graysc()
+	|      |_ fourierTransf.py
+	|      |_ classification.py
         |_ user_data
         |_ route.py

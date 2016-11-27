@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Experiments</title>
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Index Page</title>
+
+ <link rel="stylesheet" type="text/css" href="{{ url_for('send_css', cssname='bootstrap.css') }}")>
+ <link rel="stylesheet" type="text/css" href="{{ url_for('send_css', cssname='style_index.css') }}">
 </head>
+
+
 <body>
+  <div class="container">
+ 	<div class="row">
+ 		<div class="col-md-12 text-center">
 <a href="http://localhost:8000/uploader"><h2>Logarithmic</h2></a>
 <a href="http://localhost:8000/histequal"><h2>Histogram Equalization</h2></a>
-</body>
-</html>
+  		</div>
+  	</div>
+  	<div class="row">
+ 		<div class="col-md-6">
+ 			<img class="image_logo" src="{{ url_for('send_image', imagename='logo_csre.jpg') }}" alt="CSRE logo"></img>
+ 		</div>
+ 		<div class="col-md-6">
+ 			<h3 class="title-super3 "> IIT Bombay </h3>
+ 		</div>
+ 	</div>

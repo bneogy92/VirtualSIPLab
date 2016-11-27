@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, make_response, send_from_directory
-from werkzeug import secure_filename, datastructures
+from flask import Flask, render_template, request, send_from_directory
+from werkzeug import secure_filename
 import os
-from imProc.conEnh import Core
+from imProc import Core
 import re
+
 
 app = Flask(__name__,static_url_path='/css')
 
@@ -71,18 +72,23 @@ def display(fname):
     fileExt=re.findall('[.]\S+', fname)[0]
     fpath=UPLOAD_FOLDER+"\\"+fname
     newName=fname
+    path=APP_ROOT+"\\user_data\\"
+    print "path "+path
+    print "fname "+fname
+    print "newName"+newName
     if fileExt!='.jpg' and fileExt!='jpeg' and fileExt!='gif' and fileExt!='bmp':
-        fname=Core.convert(UPLOAD_FOLDER,fname,newName,'jpg')
-            
-    return send_from_directory(UPLOAD_FOLDER, fname)
+        fname=Core.convert(path,fname,newName,'jpg')
+    print fname        
+    return send_from_directory(path, fname)
 
 @app.route('/log/<fname>')
 def log(fname):
     print "i am in log"
-    path=UPLOAD_FOLDER+"\\"+fname
+    path=APP_ROOT+"\\user_data\\"+fname
     print(path)
-    newName=Core.Imagelog(path)
-    return render_template('result.html',fname=newName)
+    fname=Core.Imagelog(APP_ROOT,path)
+    #print (newName)
+    return render_template('result.html',fname=fname)
 
 @app.route('/experiments')
 def experiments():
